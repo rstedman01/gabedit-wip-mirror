@@ -42,6 +42,7 @@ DEALINGS IN THE SOFTWARE.
 #include "../Display/RingsOrb.h"
 #include "../Utils/GabeditXYPlot.h"
 #include "../../pixmaps/Open.xpm"
+#include "../Files/FileChooser.h"
 
 /* extern AnimationMD.h */
 GeometriesMD geometriesMD;

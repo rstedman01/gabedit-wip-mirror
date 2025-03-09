@@ -269,7 +269,7 @@ void  set_file_open(gchar* remotehost,gchar* remoteuser,gchar* remotedir, GabEdi
 #ifdef G_OS_WIN32
 	winsockCheck(stderr);
 #endif
-  gethostname(localhost,100);
+  g_get_host_name();
 
   if(!fileopen.localhost)
   	fileopen.localhost = g_strdup(localhost);
@@ -2009,7 +2009,7 @@ static gboolean debug1flag()
 #ifdef G_OS_WIN32
    winsockCheck(stderr);
 #endif
-   gethostname(localhost,100);
+   g_get_host_name();
    if(strlen(localhost)>=5)
    {
 	   uppercase(localhost);
@@ -5344,7 +5344,7 @@ gboolean readOneReal(FILE* file, gchar* tag, double*value)
 	if(!value) return FALSE;
 	if(t==NULL) t = g_malloc(BSIZE*sizeof(gchar));
 
-	TAG = strdup(tag);
+	TAG = g_strdup(tag);
 	uppercase(TAG);
 	rewind(file);
 
@@ -5391,7 +5391,7 @@ gboolean readOneInt(FILE* file, gchar* tag, gint*value)
 	if(!value) return FALSE;
 	if(t==NULL) t = g_malloc(BSIZE*sizeof(gchar));
 
-	TAG = strdup(tag);
+	TAG = g_strdup(tag);
 	uppercase(TAG);
 	rewind(file);
 
@@ -5439,7 +5439,7 @@ gboolean readOneBoolean(FILE* file, gchar* tag, gboolean*value)
 	if(!value) return FALSE;
 	if(t==NULL) t = g_malloc(BSIZE*sizeof(gchar));
 
-	TAG = strdup(tag);
+	TAG = g_strdup(tag);
 	uppercase(TAG);
 	rewind(file);
 
@@ -5507,7 +5507,7 @@ gboolean readOneString(FILE* file, gchar* tag, gchar**value)
 	if(t==NULL) t = g_malloc(BSIZE*sizeof(gchar));
 	if(t2==NULL) t2 = g_malloc((BSIZE+2)*sizeof(gchar));
 
-	TAG = strdup(tag);
+	TAG = g_strdup(tag);
 	uppercase(TAG);
 	rewind(file);
 
@@ -5530,7 +5530,7 @@ gboolean readOneString(FILE* file, gchar* tag, gchar**value)
 		{
 			gchar* p = t+(gint)(pos-t2);
 			if(*value) g_free(*value);
-			*value = strdup(p);
+			*value = g_strdup(p);
 			strDeleten(*value);
 			deleteFirstSpaces(*value);
 			deleteLastSpaces(*value);
@@ -5623,7 +5623,7 @@ gboolean goToStr(FILE* file, gchar* tag)
         if(!tag) return FALSE;
         if(t==NULL) t = g_malloc(BSIZE*sizeof(gchar));
 
-        TAG = strdup(tag);
+        TAG = g_strdup(tag);
         uppercase(TAG);
         rewind(file);
 
@@ -5674,7 +5674,7 @@ gchar** get_one_block_from_wfx_file(FILE* file, gchar* blockName,  gint* n)
 			gint k;
 			if(!fgets(t,BBSIZE,file))break;
 			for(k=0;k<strlen(t);k++) if(t[k]=='\n') t[k]='\0';
-			elements[i] = strdup(t);
+			elements[i] = g_strdup(t);
 	}
 	*n = nElements;
 	return elements;

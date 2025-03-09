@@ -1600,7 +1600,7 @@ void compute_volume_molecule()
 		"Volume by Crystallographers (18 ang^3 by # of a non H atom) = %0.6lf Angstrom^3\n\n"
 		" 18 ang^3 * # of atoms = %0.6lf Angstrom^3\n"
 		),
-		rmax,4*M_PI*rmax*rmax*rmax/3.0,
+		rmax,4*G_PI*rmax*rmax*rmax/3.0,
 		volNonH*nAtomsNonH,
 		volNonH*nAtoms
 		);

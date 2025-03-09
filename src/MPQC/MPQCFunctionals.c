@@ -28,7 +28,7 @@ DEALINGS IN THE SOFTWARE.
 #include "../Utils/Constants.h"
 
 /************************************************************************************************************/
-void initMPQCFunctionalsMPQC()
+void initMPQCFunctionals()
 {
 	gint n = G96X+1;
 	gint i;
@@ -140,7 +140,7 @@ void initMPQCFunctionalsMPQC()
 	functionalsMPQC[G96X].comment = g_strdup(_("Gill 1996 (G96) exchange functional"));
 }
 /************************************************************************************************************/
-void freeMPQCFunctionalsMPQC()
+void freeMPQCFunctionals()
 {
 	gint n = G96X+1;
 	gint i;
@@ -154,7 +154,7 @@ void freeMPQCFunctionalsMPQC()
 	if(sumFunctionalsMPQC) g_free(sumFunctionalsMPQC);
 }
 /************************************************************************************************************/
-void initMPQCStdFunctionalsMPQC()
+void initMPQCStdFunctionals()
 {
 	gint n = mPW1PW91+1;
 	stdFunctionalsMPQC = g_malloc(n*sizeof(MPQCStdFunctional));
@@ -423,7 +423,7 @@ void initMPQCStdFunctionalsMPQC()
 	stdFunctionalsMPQC[mPW1PW91].coefficients[2]= 1.0;
 }
 /************************************************************************************************************/
-void freeMPQCStdFunctionalsMPQC()
+void freeMPQCStdFunctionals()
 {
 	gint n = mPW1PW91+1;
 	gint i;

@@ -877,7 +877,7 @@ void run_batch_user(gboolean remote,gchar *remoteuser,gchar *remotehost,gchar *r
 	}
 #else
 	localuser = get_local_user();
-  	gethostname(localhost,100);
+  	g_get_host_name();
 #endif /* G_OS_WIN32 */
   	if(!localuser && !remote)
   	{

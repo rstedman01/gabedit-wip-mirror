@@ -26,7 +26,7 @@ DEALINGS IN THE SOFTWARE.
 ****************************************************************/
 
 #include "../../Config.h"
-#include <glib.h> /* definition of G_OS_WIN32 if windows */
+#include <glib.h>
 #include "../Common/Global.h"
 #include "../Utils/UtilsInterface.h"
 #include "../Utils/Utils.h"
@@ -35,16 +35,6 @@ DEALINGS IN THE SOFTWARE.
 #ifndef BUFSIZ
 #define BUFSIZ 8192
 #endif
-#ifdef G_OS_WIN32
-
-#include <stdio.h>
-#include <stdlib.h>
-#include <string.h>
-#include <winsock.h>
-#include <fcntl.h>
-#include <io.h>
-#include <direct.h>
-#else /* G_OS_WIN32 */
 
 #include <stdio.h>
 #include <string.h>
@@ -57,9 +47,7 @@ DEALINGS IN THE SOFTWARE.
 #include <arpa/inet.h>
 #include <netdb.h>
 #include <errno.h>
-
-#endif /* G_OS_WIN32 */
-
+#include <netinet/in.h>
 
 /*****************************************/
 char *HostName = NULL;
@@ -352,7 +340,7 @@ static gboolean hostCheck (const char* hostname)
 	memset(&remote_addr, 0, sizeof(remote_addr));
 	remote_addr.sin_addr.s_addr=inet_addr(hostname);
 	remote_addr.sin_family = AF_INET;
-	if(remote_addr.sin_addr.s_addr==(u_long)INADDR_NONE)
+	if(remote_addr.sin_addr.s_addr==(unsigned long)INADDR_NONE)
 	{
 		/* 
 			we must have gotten a host name instead 
@@ -466,7 +454,7 @@ static gboolean hostCheck (const char* hostname)
 	memset((char *)&remote_addr, 0,sizeof (remote_addr));
 	remote_addr.sin_addr.s_addr = inet_addr(hostname);
 
-	if (remote_addr.sin_addr.s_addr != (u_long)INADDR_NONE)
+	if (remote_addr.sin_addr.s_addr != (unsigned long)INADDR_NONE)
 	{
 		remote_addr.sin_family = AF_INET;
 		HostName = g_strdup(hostname);

@@ -261,7 +261,7 @@ static ChargeRI* readChargesGaussian(G_CONST_RETURN  gchar* fileName, gdouble* p
 /********************************************************************************/
 static ChargeRI* readCharges(G_CONST_RETURN  gchar* fileName, gdouble* pEnergy, gint* pnAtoms)
 {
-	gchar* fName = strdup(fileName);
+	gchar* fName = g_strdup(fileName);
 	ChargeRI* charges=  NULL;
 	GabEditTypeFile fileType = get_type_file(fName); 
 	if( fileType== GABEDIT_TYPEFILE_TXT) charges = readChargesTXT(fileName, pEnergy, pnAtoms);

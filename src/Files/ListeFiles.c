@@ -1135,7 +1135,7 @@ static void create_local_frame_popup(GtkWidget *hbox,DataTree* data)
 #ifdef G_OS_WIN32
 	winsockCheck(stderr);
 #endif
-  gethostname(localhost,100);
+  g_get_host_name();
   LabelLeft[0] = g_strdup(_("Host"));
   LabelLeft[1] = g_strdup(_("Login"));
   LabelLeft[2] = g_strdup(_("Directory"));
@@ -1450,7 +1450,7 @@ static void create_local_frame(GtkWidget *hbox)
 #ifdef G_OS_WIN32
 	winsockCheck(stderr);
 #endif
-  gethostname(localhost,100);
+  g_get_host_name();
   LabelLeft[0] = g_strdup(_("Host"));
   LabelLeft[1] = g_strdup(_("Login"));
   LabelLeft[2] = g_strdup(_("Directory"));

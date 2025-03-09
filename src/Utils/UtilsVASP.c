@@ -261,7 +261,7 @@ static GList* read_pdos_vasp_xml_file(GtkWidget* window, gchar* fileName, G_CONS
 	{
 		// symbol contain iBegin and iEnd
 		gint i,j;
-		gchar* s = strdup(symbol);
+		gchar* s = g_strdup(symbol);
 		//printf("symbol %s\n",symbol);
 		for(i=0;i<strlen(s);i++) if(s[i]=='-') s[i] = ' ';
 		//printf("s %s\n",s);

@@ -71,8 +71,8 @@ void destroyWinsMPQC(GtkWidget *win)
 	destroy(Wins,NULL);
 	Wins = NULL;
 	initMoleculeButtons();
-	freeMPQCFunctionalsMPQC();
-	freeMPQCStdFunctionalsMPQC();
+	freeMPQCFunctionals();
+	freeMPQCStdFunctionals();
 	freeMPQCMole();
 	freeMPQCGuessWaveFunction();
 	freeMPQCMolecule();
@@ -156,8 +156,8 @@ static void mpqcInputFileWindow(gboolean newInputFile)
 	newFile = newInputFile;
 	initMPQCMpqc();
 	initMPQCMole();
-	initMPQCFunctionalsMPQC();
-	initMPQCStdFunctionalsMPQC();
+	initMPQCFunctionals();
+	initMPQCStdFunctionals();
 	initMPQCGuessWaveFunction();
 	initMPQCMolecule();
 	initMPQCBasis();
