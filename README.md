@@ -1,2 +1,2 @@
 # Gabedit
-### Gabedit revitalized to work in the modern day
+### Gabedit revitalized to work with GTK4 (major WIP)
