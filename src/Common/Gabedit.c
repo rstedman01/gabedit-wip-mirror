@@ -75,8 +75,7 @@ int main(int argc, char *argv[])
    
 
   gtk_init(&argc, &argv);
-  gtk_gl_init(&argc, &argv);
-  setlocale(LC_NUMERIC,"C");
+   gtk_init(&argc, &argv);
   gabedit_gtk_stock_init();
   
 /* Initialisation */
