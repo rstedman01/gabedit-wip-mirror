@@ -64,7 +64,7 @@ DEALINGS IN THE SOFTWARE.
 /*********************************************************************************************************************/
 static gboolean ViewWindows = FALSE;
 static gboolean ViewList = TRUE;
-static GtkToolbar* toolBar = NULL;
+static GtkBox* toolBar = NULL;
 static GtkWidget* handleBoxToolBar = NULL;
 static gboolean ViewToolBar = TRUE;
 static	GtkUIManager *manager = NULL;
