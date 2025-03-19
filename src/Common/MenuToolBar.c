@@ -69,8 +69,8 @@ static GtkWidget* handleBoxToolBar = NULL;
 static gboolean ViewToolBar = TRUE;
 static GMenuModel *menu_model = NULL;
 /*********************************************************************************************************************/
-static void view_icons()
-{
+static GSimpleActionGroup *actionGroup = NULL;
+static GMenu *menu = NULL;
 	static gboolean mini=TRUE;
 	mini = !mini;
 	if(mini)
