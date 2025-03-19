@@ -67,7 +67,7 @@ static gboolean ViewList = TRUE;
 static GtkBox* toolBar = NULL;
 static GtkWidget* handleBoxToolBar = NULL;
 static gboolean ViewToolBar = TRUE;
-static	GtkUIManager *manager = NULL;
+static GMenuModel *menu_model = NULL;
 /*********************************************************************************************************************/
 static void view_icons()
 {
